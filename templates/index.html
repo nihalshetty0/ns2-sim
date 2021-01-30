@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NS-2 Trace File Analyser</title>
+	<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"> 
+	<link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+	<div id="mainBody" class="container">
+		<h2>NS-2 Trace File Analyser</h2>
+		
+		<form method="POST" action="" enctype="multipart/form-data">
+			<p><input type="file" name="file" onchange="submit"></p>
+			<p><input id="submit" type="submit" value="Submit" style="display: inline;"></p>
+			<!-- <button id="refresh" style="display: inline;">Refresh</button> -->
+		  </form>
+
+		<div id="output">
+			<!-- below id not to be removed. Must for js file to work -->
+			<p>{{node0_o}}</p>
+			<p>{{node1_o}}</p>
+			<p>{{node2_o}}</p>
+			<p>{{node3_o}}</p> 
+			<p>{{node4_o}}</p>
+			<p>{{node5_o}}</p>
+			<p>{{node6_o}}</p>
+
+			
+			{% with messages = get_flashed_messages() %}
+        		{% if messages %}
+					{% for msg in messages %}
+						{%if msg == "Please enter a file!!"%}
+							<p style="color:red">{{msg}}</p>
+						{%else%}
+							<p>{{msg}}</p>	
+						{%endif%}
+            		{%endfor%}
+        		{%endif%}
+			{%endwith%}
+		</div>
+	</div>
+
+	<!--  -->
+
+	<div class="canvas-container" style="margin-top: 0;">
+		<canvas height="500px" width="500px" id="canvas"></canvas>
+		<canvas height="500px" width="500px" id="canvas2"></canvas>
+		
+	</div>
+
+	<!-- <id id="control">
+		<button class="btn"> 1> </button>
+		<img style="width: 40px;height: 40px; color:white" src="../static/pause-button-svgrepo-com.svg" alt="">
+
+		<div class="slidecontainer">
+			<input type="range" min="1" max="7" value="1" class="slider" id="myRange">
+		</div>
+		<div id="demo"></div>
+	</id> -->
+
+	<id style="display: none;">
+		<p id="data" name="{{transfer}}"></p>
+	</id>
+</body>
+	<script src="../static/main.js"></script>
+</html>
+
