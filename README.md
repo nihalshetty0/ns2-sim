@@ -1,7 +1,7 @@
 # ns2-sim
 Vizualize .tr networking log files
 
-make using python, flask and canvas API
+Made using python, flask and canvas API
 
 ![image](https://user-images.githubusercontent.com/50148498/128620107-502af2e1-fced-40af-a51d-14ce1869973a.png)
 
